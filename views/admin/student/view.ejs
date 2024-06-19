@@ -1,0 +1,63 @@
+<%- include("../header.ejs") %>
+    <%- include("../sidebar.ejs") %>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="container">
+
+                        <h1 class="mt-3 mb-1 text-center bg-secondary">View</h1>
+
+                    </div><!-- /.row -->
+
+                    <div class="row">
+
+
+                        <br>
+                        
+                        <div class="container">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Course</th>
+                                    <th>Date Of Birth</th>
+                                    <th>address</th>
+                                    <th>image</th>
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                       <%= d.name %>
+                                    </td>
+                                    <td>
+                                        <%= d.email %>
+                                    </td>
+                                    <td>
+                                        <%= d.course %>
+                                    </td>
+                                    <td>
+                                        <%= d.dob %>
+                                    </td>
+                                    <td>
+                                        <%= d.address %>
+                                    </td>
+                                    <td><img src="<%= d.image.url%>" width="40px" alt=""></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <center>
+                            <a href="/admin/display" class="btn btn-info">Back</a>
+                        </center>
+
+                    </div><!-- /.container-fluid -->
+                </div>
+            </div>
+            <!-- /.content-header -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <%- include("../footer.ejs") %>

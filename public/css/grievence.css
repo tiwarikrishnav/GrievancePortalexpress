@@ -1,0 +1,99 @@
+
+.topbar{
+    display: flex;
+    margin-top: 20px;
+    padding: 22px;
+    height: 110px;
+}
+.number{
+    margin-left: 10px;
+    font-size: 25px;
+}
+.headicon{
+    font-size: 25px;
+    color: rgb(4, 30, 117);
+    text-align: end;
+}
+.icon{
+    padding: 3%;
+
+}
+.headportal{
+    margin-left: 18px;
+    font-weight: 800;
+    font-size: 35px;
+    text-align: center;
+}
+
+.navbar{
+    background: rgb(4, 30, 117) !important;
+    height: 70px;
+}
+.navbar-nav li{
+    padding: 0 8px;
+}
+.navbar-nav li a{
+    color: #fff!important;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.grievanceHEAD{
+    padding-top: 35px;
+    color: rgb(4, 30, 117);
+    font-family: sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.whygreviance {
+    padding-top: 30px;
+    color: rgb(4, 30, 117);
+    font-family: sans-serif;
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-size: 16px;
+    line-height: 25px;
+}
+.main {
+    background-color: #213e94;
+    padding: 10px;
+}
+.userIMG{
+    font-size: 100px;
+    color: #f3aa92;
+}
+.comborder {
+    border: 2px solid white;
+    padding: 10px;
+}
+.comborder h2 {
+    color: #fff;
+    padding: 5px;
+    font-size: 28px;
+}
+.comborder p {
+    color: #fff;
+    font-size: 16px;
+}
+.loginbtn{
+    background-color: #f3aa92 !important;
+    color: white !important;
+}
+.footerbg{
+    background-color: rgb(219, 214, 212);
+}
+.foot1 h1,.foot2 h2,.foot3 h2{
+    font-size: 30px;
+    font-weight: 600;
+}
+.foot1 p{
+    font-size: 22px;
+    font-weight: 100;
+}
+.foot2 ul li a{
+    text-decoration: none;
+    color: grey;
+    font-size: 15px;
+    line-height: 30px;
+}

@@ -1,0 +1,248 @@
+<%- include("./header.ejs") %>
+
+    <style>
+        .clock {
+            font-family: Arial, sans-serif;
+            font-size: 48px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+    </style>
+
+    <div class="container-fluid">
+        <div class="row h-100vh">
+            <h1 class="studentnavbar">ITMGrievance<span style="color: #fff;">Portal</span></h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="rowone">
+                    <div>
+                        <img src="<%= i.url %>" width="150" alt="">
+                    </div>
+                    <div class="mt-2">
+                        <a href="/logout" class="btn btn-lg btn-link">logout</a>
+                    </div>
+                    <div class="mt-1">
+                        <h5>Student Profile Info</h4>
+                    </div>
+                    <!--name-->
+                    <div class="mt-2">
+                        <h6><i class="fa-regular fa-user"></i> <span>
+                                <%= n%>
+                            </span> </h6>
+                    </div>
+                    <!--email-->
+                    <div class="mt-1">
+                        <h6><i class="fa-regular fa-user"></i> <span>
+                                <%= e%>
+                            </span></h6>
+                    </div>
+                    <!--Roll no-->
+                    <div class="mt-1">
+                        <h6>Roll Number: <span>
+                                <%= r%>
+                            </span></h4>
+                    </div>
+                    <!--mobile-->
+                    <div class="mt-1">
+                        <h6>Mobile Number: <span>
+                                <%= m%>
+                            </span></h4>
+                    </div>
+                    <div class="mt-1">
+                        <button type="button" class="btn btn-info">Edit Profile</button>
+                    </div>
+                    <div class="mt-1">
+                        <button type="button" class="btn btn-success">Change Password</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="rowsecond">
+                    <div>
+                        <h2 style="margin-left: 3vh;">hello Ram,</h2>
+                    </div>
+                    <div class="col-md-5 mt-5">
+                        <div class="clock">
+                            <div id="time"></div>
+                        </div>
+                        <script src="script.js"></script>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="col-md-2">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 mt-2">
+                <div class="card bg-secondary">
+                    <h1 class="ms-3">Post a grievance</h1>
+                    <h5 class="ms-3">Having some issue?? Load a new complaint</h5>
+                    <button type="button" class="btn btn-sm btn-info mb-3" data-toggle="modal" data-target="#complain">
+                        Complaint
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4 mt-2">
+                <div class="card bg-secondary">
+                    <h1 class="ms-3">Post a grievance</h1>
+                    <h5 class="ms-3">Having some issue?? Load a new complaint</h5>
+                    <button type="button" class="btn btn-sm btn-info mb-3" data-toggle="modal" data-target="#complain">
+                        Complaint
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4 mt-2">
+                <div class="card bg-secondary">
+                    <h1 class="ms-3">Complaint view</h1>
+                    <h5 class="ms-3">Having some issue?? Load a new complaint</h5>
+                    <button type="button" class="btn btn-sm btn-info mb-3" data-toggle="modal"
+                        data-target="#viewcomplaint">
+                       View
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Complaint-start-->
+    <div class="modal fade" id="complain">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Complaint</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/StudentComplaint" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="name">Complaint type</label>
+                            <input type="text" class="form-control" name="ctype" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="rollnumber">Complaint detail</label>
+                            <textarea name="cdetail" class="form-control" id=""></textarea>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="fathername">Roll no.</label>
+                            <input type="text" class="form-control" placeholder="" name="rollno" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="course">Course</label>
+                            <select class="form-control" name="course" required>
+                                <option value="">Select value</option>
+                                <option>Mba</option>
+                                <option>Mca</option>
+                                <option>B-tech</option>
+                                <option>B-com</option>
+                                <option>Ba</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="image"></label>
+                            <input type="file" class="form-control" name="image" required />
+                        </div>
+
+                        <center>
+                            <button class="btn btn-primary mt-3" type="submit">
+                                Submit
+                            </button>
+                        </center>
+                    </form>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- modal Complain-end -->
+
+    <!--view complaint-start-->
+
+    <div class="modal fade" id="viewcomplaint">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">View Complaint</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container mt-2">
+                        <table class="table table-bordered text-center">
+                            <thead>
+                                <tr>
+                                    <th colspan="6" class="bg-dark text-white">Student data</th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Complaint Type
+                                    </th>
+                                    <th>
+                                        Complaint Detail
+                                    </th>
+                                    <th>
+                                        Result
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td>
+                                    raj
+                                </td>
+                                <td>
+                                    Complaint Type
+                                </td>
+                                <td>
+                                    Complaint Detail
+                                </td>
+                                <td>
+                                    Action
+                                </td>
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <!--view complaint-end-->
+
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('time').textContent = timeString;
+        }
+
+        setInterval(updateTime, 1000);
+    </script>
+
+
+    <%- include("../footer.ejs") %>
